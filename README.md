@@ -190,6 +190,6 @@ implementation fileTree(include: ['*.jar'], dir: 'libs')
 or
 
 ```
-implementation(name: 'sdk-3.0.9', ext: 'aar')
+implementation(name: 'com.siyehua.flataar-mylibrary2-1.0.2', ext: 'aar')
 
 ```
