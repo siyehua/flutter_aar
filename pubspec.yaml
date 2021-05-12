@@ -2,7 +2,7 @@ name: flutter_aar
 description: A new Flutter plugin.
 version: 0.0.2
 author: siyehua
-homepage:
+homepage: https://github.com/siyehua/flutter_aar
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
