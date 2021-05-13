@@ -2,7 +2,7 @@
 
 A gradle task that allows you use local .aar file directly.
 
-[中文文档](https://github.com/siyehua/flutter_aar/README_CN.md)
+[中文文档](https://github.com/siyehua/flutter_aar/blob/main/README_CN.md)
 
 ## Getting Started
 
@@ -178,6 +178,9 @@ com.siyehua.flataar-mylibrary2-1.0.2.aar
 ```
 
 ### Now you can use aar file in your custom plugin.
+
+more info [build.gradle](https://github.com/siyehua/flutter_aar/blob/main/android/build.gradle)
+
 
 ## Note
 

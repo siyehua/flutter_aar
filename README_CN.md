@@ -178,6 +178,8 @@ com.siyehua.flataar-mylibrary2-1.0.2.aar
 
 ### 现在你就可以使用本地 aar 文件了.
 
+详细例子请看 [build.gradle](https://github.com/siyehua/flutter_aar/blob/main/android/build.gradle)
+
 ## 注意
 
 不要在 `dependencies` 直接添加下面的代码, task 会自动添加:
