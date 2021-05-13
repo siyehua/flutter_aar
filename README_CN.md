@@ -1,12 +1,10 @@
 # flutter_aar
 
-A gradle task that allows you use local .aar file directly.
+一个可以直接使用本地 aar 文件的 gradle task
 
-[中文文档](https://github.com/siyehua/flutter_aar/README_CN.md)
+## 开始使用
 
-## Getting Started
-
-1. First, copy this code to the end of `pluginProject/android/build.gradle`
+1. 复制下面代码, 到 `插件项目路径/android/build.gradle` 的最后面: 
 
 ```
 String aarPath = localMavenPath
@@ -157,7 +155,7 @@ public static String getFileMD5(File file) {
 }
 ```
 
-2. Step2, change `repositories`, add a custom maven url :
+2. 修改刚才文件的 `repositories`, 添加自定义仓库地址 :
 
 ```
 String localMavenPath = project.mkdir("build").absolutePath
@@ -168,28 +166,31 @@ rootProject.allprojects {
 }
 ```
 
-3. Now, copy .aar file to `libs` dir
+3. 复制你的 aar 文件到 `libs` 目录
 
-the aar must name to `groupId-artifactId-version.aar`
+注意, aar 的文件格式必须是:  `groupId-artifactId-version.aar`
 
-eg:
+例如:
+
 ```
 com.siyehua.flataar-mylibrary2-1.0.2.aar
 ```
 
-### Now you can use aar file in your custom plugin.
+### 现在你就可以使用本地 aar 文件了.
 
-## Note
+## 注意
 
-don't add code in `dependencies`
+不要在 `dependencies` 直接添加下面的代码, task 会自动添加:
 
 ```
 implementation fileTree(include: ['*.jar'], dir: 'libs')
 ```
 
-or
+或者:
 
 ```
 implementation(name: 'com.siyehua.flataar-mylibrary2-1.0.2', ext: 'aar')
 
 ```
+
+这种方式会被认定为本地 aar, 编译无法通过
