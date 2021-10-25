@@ -3,10 +3,16 @@
 一个可以直接使用本地 aar 文件的 gradle task
 
 ## 开始使用
+1. 复制下面代码, 到 `插件项目路径/android/build.gradle` 顶侧:
 
-1. 复制下面代码, 到 `插件项目路径/android/build.gradle` 的最后面: 
-
+```groovy
+import java.security.MessageDigest
+import java.security.NoSuchAlgorithmException
 ```
+
+2. 复制下面代码, 到 `插件项目路径/android/build.gradle` 的最后面: 
+
+```groovy
 String aarPath = localMavenPath
 task useAar {
     File file = project.file("libs")
@@ -155,9 +161,9 @@ public static String getFileMD5(File file) {
 }
 ```
 
-2. 修改刚才文件的 `repositories`, 添加自定义仓库地址 :
+3. 修改刚才文件的 `repositories`, 添加自定义仓库地址 :
 
-```
+```groovy
 String localMavenPath = project.mkdir("build").absolutePath
 rootProject.allprojects {
     repositories {
@@ -166,7 +172,7 @@ rootProject.allprojects {
 }
 ```
 
-3. 复制你的 aar 文件到 `libs` 目录
+4. 复制你的 aar 文件到 `libs` 目录
 
 注意, aar 的文件格式必须是:  `groupId-artifactId-version.aar`
 

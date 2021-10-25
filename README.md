@@ -6,9 +6,16 @@ A gradle task that allows you use local .aar file directly.
 
 ## Getting Started
 
-1. First, copy this code to the end of `pluginProject/android/build.gradle`
+1. First, add the libraries listed below to the top of `pluginProject/android/build.gradle`
 
+```groovy
+import java.security.MessageDigest
+import java.security.NoSuchAlgorithmException
 ```
+
+2. Copy this code to the end of `pluginProject/android/build.gradle`
+
+```groovy
 String aarPath = localMavenPath
 task useAar {
     File file = project.file("libs")
@@ -157,9 +164,9 @@ public static String getFileMD5(File file) {
 }
 ```
 
-2. Step2, change `repositories`, add a custom maven url :
+3. Step2, change `repositories`, add a custom maven url :
 
-```
+```groovy
 String localMavenPath = project.mkdir("build").absolutePath
 rootProject.allprojects {
     repositories {
@@ -168,7 +175,7 @@ rootProject.allprojects {
 }
 ```
 
-3. Now, copy .aar file to `libs` dir
+4. Now, copy .aar file to `libs` dir
 
 the aar must name to `groupId-artifactId-version.aar`
 
@@ -186,13 +193,13 @@ more info [build.gradle](https://github.com/siyehua/flutter_aar/blob/main/androi
 
 don't add code in `dependencies`
 
-```
+```groovy
 implementation fileTree(include: ['*.jar'], dir: 'libs')
 ```
 
 or
 
-```
+```groovy
 implementation(name: 'com.siyehua.flataar-mylibrary2-1.0.2', ext: 'aar')
 
 ```
